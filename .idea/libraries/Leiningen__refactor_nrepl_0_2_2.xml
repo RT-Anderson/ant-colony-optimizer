@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Leiningen: refactor-nrepl:0.2.2">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/refactor-nrepl/refactor-nrepl/0.2.2/refactor-nrepl-0.2.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
