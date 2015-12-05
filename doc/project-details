@@ -1,0 +1,23 @@
+
+#Summary of components required to implement the algorithm
+
+Sections
+
+(1) sandbox
+    -Create a vector of nodes the ants will traverse
+
+(2) tools
+    -Functions for randomizing selected paths
+
+(3) colony
+    -Build the configuration parameters for the ACO
+
+(4) aco-algo
+    -Algorithm for computing the optimal path
+
+(5) visual (on-hold)
+    -Display the sandbox waypoints & optimal path
+
+(6) analyze
+    -Monitor the efficiency of the algorithm
+

@@ -1,6 +1,7 @@
-(ns ant-colony-optimizer.core)
+(ns ant-colony-optimizer.core
+  [:require [ant-colony-optimizer.tools :as t]])
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+
+(def waypoints
+  (t/set-waypoints 4 20))
+waypoints
