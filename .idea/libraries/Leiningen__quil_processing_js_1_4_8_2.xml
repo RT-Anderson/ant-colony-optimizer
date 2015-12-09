@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Leiningen: quil/processing-js:1.4.8.2">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/quil/processing-js/1.4.8.2/processing-js-1.4.8.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

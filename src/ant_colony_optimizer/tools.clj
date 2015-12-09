@@ -35,11 +35,12 @@
     (euclidean-distance nodeA nodeB)))
 
 (defn get-route-distance
-  [path colony]
+  ;; Compute distance of route that ends at its starting point
+  [path waypoints]
   (if (empty? path)
     nil
   (let [path2 (conj (subvec path 1) (first path))]
-    (reduce + (map #(get-distance %1 %2 (:waypoints colony)) path path2)))))
+    (reduce + (map #(get-distance %1 %2 waypoints) path path2)))))
 
 
 (defn remove-vec-element
