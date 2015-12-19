@@ -3,25 +3,30 @@
             [clojure.math.numeric-tower :as math]])
 
 (defn create-colony
-  [waypoints tours ants evap-rate]
-  (let [keylist (t/create-keys (count waypoints))
-        ones-map (zipmap keylist (repeat 1))
-        zeros-map (zipmap keylist (repeat 0))
-        evaporation-map (zipmap keylist (repeat (- 1 evap-rate)))]
-    {:config {:alpha-coeff 1
-              :beta-coeff 1.2
-              :tour-coeff 1
-              :tour-count tours
-              :ant-count ants}
-     :waypoints waypoints
-     :pher-map (atom ones-map)
-     :pher-update (atom zeros-map)
-     :pher-reset ones-map
-     :pher-update-reset zeros-map
-     :evap evaporation-map
-     :best-route (atom {:score 0 :path []})
-     :stored-history (atom [])
-     :local-optimal-score (atom 0)}))
+  ([waypoints tour-cnt ant-cnt evap-rate alpha beta tour-coeff]
+    (let [keylist (t/create-keys (count waypoints))
+          ones-map (zipmap keylist (repeat 1))
+          zeros-map (zipmap keylist (repeat 0))
+          evaporation-map (zipmap keylist (repeat (- 1 evap-rate)))]
+      {:config {:alpha-coeff alpha
+                :beta-coeff beta
+                :tour-coeff tour-coeff
+                :tour-count tour-cnt
+                :ant-count ant-cnt}
+       :waypoints waypoints
+       :pher-map (atom ones-map)
+       :pher-update (atom zeros-map)
+       :pher-reset ones-map
+       :pher-update-reset zeros-map
+       :evap evaporation-map
+       :best-route (atom {:score 0 :path []})
+       :stored-history (atom [])
+       :local-optimal-score (atom 0)}))
+  ([waypoints tour-cnt ant-cnt]
+    (create-colony waypoints tour-cnt ant-cnt 0.6))
+  ([waypoints tour-cnt ant-cnt evap-rate]
+   (create-colony waypoints tour-cnt ant-cnt evap-rate 1 1.1 1)))
+
 
 (defn edge-weight
   ;; Compute the numerator component of the edge-selection probability from pt1 to pt2

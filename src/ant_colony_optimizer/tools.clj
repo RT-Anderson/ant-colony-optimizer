@@ -24,7 +24,7 @@
   (memoize
     (fn [pt1 pt2]
       (if (= pt1 pt2)
-        99999999999999999999999999999999999999
+        ((println "Error: " pt1 " , " pt2) 99999999999999999999999999999999999999)
         (math/sqrt (reduce + (map (comp #(math/expt % 2) -) pt1 pt2)))))))
 
 (defn get-distance
