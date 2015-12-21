@@ -19,7 +19,7 @@
 (defn draw-path [waypoint-list colony max-screen-dimension]
   (vis/sketch-route waypoint-list colony max-screen-dimension))
 
-;;(def w (create-waypoints 15 400))
-;;(def c (create-colony w 15 16 0.7))
+;;(def w (create-waypoints 30 400))
+;;(def c (create-colony w 40 25 0.6))
 ;;(run-aco c)
 ;;(def v (draw-path w c 400))
